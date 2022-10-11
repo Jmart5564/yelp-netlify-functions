@@ -3,8 +3,7 @@ require('dotenv').config({ path: `.env.development.local` });
 
 const handler = async (event) => {
 
-  const { zip } = event.queryStringParameters;
-  const { search } = event.queryStringParameters;
+  const { zip, search } = event.queryStringParameters;
 
   try {
     const resp = await fetch(`https://api.yelp.com/v3/businesses/search?categories=restaurants&location=${zip}&term=${search}`,
